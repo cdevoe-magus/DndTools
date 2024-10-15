@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>The Dragon's Hoard</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>The Dragon's Hoard</h1>
+    <div>A pile of gold and treasure lies before you.</div>
+    
+    <form>
+        <fieldset>
+            <legend>Potions/Scrolls</legend>
+            <label for="type">Spell School</label>
+            <input id="type" list="School" />
+            <datalist id="School">
+                <option value="Random"></option>
+                <option value="Abjuration"></option>
+                <option value="Conjuration"></option>
+                <option value="Evocation"></option>
+                <option value="Illusion"></option>
+                <option value="Necromancy"></option>
+                <option value="Divination"></option>
+                <option value="Enchantment"></option>
+                <option value="Transmutation"></option>
+            </datalist>
+            <label for="level">Spell Level</label>
+            <input id="level" type="number" value="0" min="0" max="9" />
+            <button type="button" onclick="genPot(this)">Generate</button>
+        </fieldset>
+        <fieldset>
+            <legend>Weapons</legend>
+            <label for="type">Weapon Type</label>
+            <input id="type" list="WeaponType" />
+            <datalist id="WeaponType">
+                <option value="Random"></option>
+                <option value="Sword"></option>
+                <option value="Dagger"></option>
+                <option value="Polearm/Spear"></option>
+                <option value="Axe"></option>
+                <option value="Hammer/Flail"></option>
+                <option value="Bow/Ranged"></option>
+                <option value="Gun"></option>
+                <option value="Exotic"></option>
+                <option value="Close/Fist"></option>
+                <option value="Monk/Ninja"></option>
+            </datalist>
+            <label for="plus">Plus Value</label>
+            <input id="plus" type="number" value="1" min="0" max="25"/>
+            <button type="button" onclick="genWeapon(this)">Generate</button>
+        </fieldset>
+        <fieldset>
+            <legend>Armor</legend>
+            <label for="type">Armor Type</label>
+            <input id="type" list="ArmorType" />
+            <datalist id="ArmorType">
+                <option value="Random"></option>
+                <option value="Light"></option>
+                <option value="Medium"></option>
+                <option value="Heavy"></option>
+                <option value="Shield"></option>
+            </datalist>
+            <label for="plus">Plus Value</label>
+            <input id="plus" type="number" value="1" min="0" max="25" />
+            <button type="button" onclick="genArmor(this)">Generate</button>
+        </fieldset>
+        <fieldset>
+            <legend>Dice</legend>
+            <label for="dieNumber">Number of Dice</label>
+            <input id="dieNumber" type="number" value="1" />
+            <button type="button" onclick="roll(this, 4)">d4</button>
+            <button type="button" onclick="roll(this, 6)">d6</button>
+            <button type="button" onclick="roll(this, 8)">d8</button>
+            <button type="button" onclick="roll(this, 10)">d10</button>
+            <button type="button" onclick="roll(this, 12)">d12</button>
+            <button type="button" onclick="roll(this, 20)">d20</button>
+            <button type="button" onclick="roll(this, 100)">d100</button>
+        </fieldset>
+        <button type="button" onclick="clearLoot(this)">Clear</button>
+        <ul id="loot">
+        </ul>
+    </form>   
+</body>
+</html>
